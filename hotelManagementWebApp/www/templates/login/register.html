@@ -1,0 +1,38 @@
+<div class="header">
+    <div class="l-logo container text-center">
+        <div class="logo">
+            <img src="images/logo.png" class="img-responsive">
+        </div>
+        <h1>Hotel Management</h1>
+        <h2>A companion that you can trust</h2>
+
+    </div>
+</div>
+
+<div class="login-wrapper" material>
+  <div class="form-page form-page1">
+    <div class="form form1">
+     
+        <form class="login-form" ng-submit="registerForm(cred)" validate>
+          
+          <input type="text" class="fix-t" placeholder="FirstName" ng-model="cred.name" required />
+          <input type="text"  class="fix-t" placeholder="LastName" ng-model="cred.lastName" required />
+          <input type="email" placeholder="Email" ng-model="cred.email" required />
+          <input type="password" placeholder="password"  ng-model="cred.password" ng-change="ch()" required />
+          <input type="password" placeholder="Confirm Password" ng-model="cred.cpass" ng-change="checkPass(cred.cpass, cred.password)" required/>
+          <p style="height: 40px;">{{err}}</p>
+
+          <div class="col-xs-12" align="center">
+            <button class="btn btn-raised btn-primary" ng-disabled="err != ''">Register</button>
+
+            <p class="message point" ng-click="login()">Go to Login</p>
+            <p class="message point" ng-click="home()">HOME</p>
+          </div>
+          
+          <div style="clear:both;"></div>
+        </form>
+    </div>
+       <div style="clear:both;"></div>
+    </div>
+</div>
+<div class="footer"></div>

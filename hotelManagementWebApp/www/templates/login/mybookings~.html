@@ -1,0 +1,54 @@
+<div class="header">
+    <div class="l-logo container text-center">
+        <div class="logo">
+            <img src="images/logo.png" class="img-responsive">
+        </div>
+        <h1>Hotel Management</h1>
+        <h2>A companion that you can trust</h2>
+        <div class="dmo" ng-show ="noLogin">
+          <button class="btn btn-primary" ng-click="login()">Login</button>
+          <button class="btn btn-primary" ng-click="register()">Register</button>
+        </div>
+
+        <div class="dmo1" ng-hide ="noLogin">
+          <p><span class= "point" ng-click="homeses()">HOME</span>  |  <span class= "point" ng-click="myProfile()">PROFILE</span>  |  <span class= "point" ng-click="myBookings()">BOOKINGS</span>  |  {{user.name| uppercase}} {{user.lastName| uppercase}}</p>
+          
+          <button class="btn btn-primary" ng-click="logout()">Logout</button>
+        </div>
+    </div>
+</div>
+
+<div class="container" material>
+    <h1>Bookings</h1>
+    <div class="panel panel-default" ng-repeat="booking in bookings" style="margin-top: 30px;">
+        <div class="panel-body">
+            RESERVATION:
+            <p>begin date: {{booking.begin_date.month}} {{booking.begin_date.dayOfMonth}}  {{booking.begin_date.year}}</p>
+            <p>begin date: {{booking.end_date.month}} {{booking.end_date.dayOfMonth}}  {{booking.end_date.year}}</p>
+
+            HOTEL:
+            {{booking.hotel.name}}
+            {{booking.hotel.address}}
+            {{booking.hotel.rating}}
+            {{booking.hotel.category.name}}
+
+            ROOMTYPE:
+            {{booking.roomType}}
+
+            ROOM:
+            <div ng-repeat="room in booking.rooms">
+              <p>floor: {{room.floor}} </p>
+              <p>price: {{room.price}} </p>
+              <p>roomNumber: {{room.room_number}}</p>
+            </div>
+            
+            <div ng-hide="{{booking.state}}">
+              <button ng-click="payBooking(booking)" class="btn btn-primary btn-raised">PAY</button>
+            </div>
+            
+        </div>
+          
+        </div>
+    </div>
+
+</div>

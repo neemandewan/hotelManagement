@@ -1,0 +1,28 @@
+<div class="header">
+    <div class="l-logo container text-center">
+        <div class="logo">
+            <img src="images/logo.png" class="img-responsive">
+        </div>
+        <h1>Hotel Management</h1>
+        <h2>A companion that you can trust</h2>
+
+    </div>
+</div>
+
+<div class="login-wrapper" material>
+    <div class="login-page login-page1">
+      <div class="form">
+
+        <form class="login-form" ng-submit="logUser(credentials)" validate>
+          <input type="email" placeholder="Email" ng-model="credentials.email" required />
+          <input type="password" placeholder="password" ng-model="credentials.pass" required/>
+          <button class="btn btn-raised btn-primary">login</button>
+          <p class="message point" ng-click="goToRegister()">Go to register</p>
+          <p class="message point" ng-click="home()">HOME</p>
+        </form>
+
+      </div>
+    </div>
+</div>
+
+<div class="footer"></div>

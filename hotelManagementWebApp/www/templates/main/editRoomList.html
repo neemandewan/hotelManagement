@@ -1,0 +1,40 @@
+<div id="editroomlist" class="col-xs-12 mob-s" init-nav ng-cloak>
+    
+    <div class="col-xs-12 col-md-offset-1 col-md-10" material >
+    <h3>Edit Room lists</h3>
+    
+    <div class="panel panel-default" style="margin-top: 30px;" ng-click="addRoom()">
+          <div class="panel-body">
+            <div class="col-xs-12 fluid">
+              <h4 class="point"><center>ADD ROOM</center></h4>
+          </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default" ng-repeat = "room in  rooms track by $index" style="margin-top: 30px;">
+        <div class="panel-body">
+          <div class="col-xs-12 fluid">
+            <div class="col-xs-3 fluid">
+              <div style="background-image: url(https://i.pinimg.com/736x/2d/07/10/2d0710821657421bc20be36a3dca8964--art-deco-interior-living-room-gallery-wall-living-room.jpg); " class="hotel-im">
+              </div>
+            </div>
+            <div class="col-xs-7">
+              <h5><b>Room No: {{room.room_number}}</b></h5>
+              <h6>Price: ${{room.price}}</h6>
+              <p>Floor: {{room.floor}}</p>
+
+              <h5><b>Type: {{room.type.description}}</b></h5>
+              <p>Occupancy: {{room.type.occupancy}}</p>
+              <p>Reserved: {{room.days_reserved}}</p>
+
+            </div>
+            <div class="col-xs-2">
+              <button class="btn btn-raised btn-success btn-3" ng-click="editRoom(adminId, room)">Edit</button>
+              <button class="btn btn-raised btn-danger btn-3" ng-click="deleteRoom(adminId, room)">DELETE</button>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+
+</div>

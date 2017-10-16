@@ -1,0 +1,79 @@
+<div class="header">
+    <div class="l-logo container text-center">
+        <div class="logo">
+            <img src="images/logo.png" class="img-responsive">
+        </div>
+        <h1>Hotel Management</h1>
+        <h2>A companion that you can trust</h2>
+        <div class="dmo" ng-show ="noLogin">
+          <button class="btn btn-primary" ng-click="login()">Login</button>
+          <button class="btn btn-primary" ng-click="register()">Register</button>
+        </div>
+
+        <div class="dmo1" ng-hide ="noLogin">
+          <p><span class= "point" ng-click="homeses()">HOME</span>  |  <span class= "point" ng-click="myProfile()">PROFILE</span>  |  <span class= "point" ng-click="myBookings()">BOOKINGS</span>  |  {{user.name| uppercase}} {{user.lastName| uppercase}}</p>
+          <button class="btn btn-primary" ng-click="logout()">Logout</button>
+        </div>
+    </div>
+</div>
+
+<div>
+  <data-owl-carousel class="owl-carousel">
+      <div owl-carousel-item="" ng-repeat="image in images" class="item">
+         <div>
+            <div style="background: url({{image}})" class="slide-im"></div>
+          </div>
+      </div>
+    </data-owl-carousel>
+  
+</div>
+
+<div class="container" material>
+    
+    <h1>Available Hotels</h1>
+
+    <div class="panel panel-default" ng-repeat = "hotel in  hotels track by $index" style="margin-top: 30px;">
+        <div class="panel-body">
+          <div class="col-xs-12 fluid">
+            <div class="col-xs-3 fluid">
+              <div style="background-image: url({{hotel.images}}); " class="hotel-im">
+              </div>
+            </div>
+            <div class="col-xs-7">
+              <h3><b>{{hotel.name}}</b></h3>
+              <h4>{{hotel.address}}</h4>
+              <p>Rating: {{hotel.rating}}</p>
+              <p>Category: {{hotel.category.name}}</p>
+              <p>{{hotel.description}}</p>
+
+            </div>
+            <div class="col-xs-2">
+              <button class="btn btn-raised btn-info btn-full" ng-click="book(customerId, hotel)">Book</button>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+
+</div>
+
+<div class="modal" ng-show="showEventsDialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="hideEventsDialog()">×</button>
+                    <h4 class="modal-title">Dear Guest</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You need to login to book the hotel rooms.</p>
+                    <p>Please LOGIN or REGISTER</p>
+                    </div>
+                    <div class="cf"></div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="footer"></div>

@@ -1,0 +1,38 @@
+<div class="header">
+    <div class="l-logo container text-center">
+        <div class="logo">
+            <img src="images/logo.png" class="img-responsive">
+        </div>
+        <h1>Hotel Management</h1>
+        <h2>A companion that you can trust</h2>
+        <div class="dmo" ng-show ="noLogin">
+          <button class="btn btn-primary" ng-click="login()">Login</button>
+          <button class="btn btn-primary" ng-click="register()">Register</button>
+        </div>
+
+        <div class="dmo1" ng-hide ="noLogin">
+          <p><span class= "point" ng-click="homeses()">HOME</span>  |  <span class= "point" ng-click="myProfile()">PROFILE</span>  |  <span class= "point" ng-click="myBookings()">BOOKINGS</span>  |  {{user.name| uppercase}} {{user.lastName| uppercase}}</p>
+          
+          <button class="btn btn-primary" ng-click="logout()">Logout</button>
+        </div>
+    </div>
+</div>
+
+<div class="container" material>
+    <h1>Bookings</h1>
+    <div class="panel panel-default" style="margin-top: 30px;">
+        <div class="panel-body">
+            Amount to pay: {{payAmt}}
+            Select payment options:
+            1. MasterCard
+            2. Paypal
+            3. CreditCard
+            
+            <button ng-click="pay(payId)" class="btn btn-primary btn-raised">PAY</button>
+            
+        </div>
+          
+        </div>
+    </div>
+
+</div>

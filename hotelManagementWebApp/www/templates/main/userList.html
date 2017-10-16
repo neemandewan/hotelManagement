@@ -1,0 +1,27 @@
+<div id="welcome" class="col-xs-12 mob-s" init-nav ng-cloak>
+    
+    <div class="col-xs-12 col-md-offset-1 col-md-10" material >
+    <h3>User Lists</h3>
+
+    <div class="panel panel-default" ng-repeat = "user in users track by $index" style="margin-top: 30px;">
+        <div class="panel-body">
+          <div class="col-xs-12 fluid">
+            <div class="col-xs-3 fluid">
+              <div style="background-image: url(/images/avatar.jpg); " class="hotel-im">
+              </div>
+            </div>
+            <div class="col-xs-7">
+              <h4>Name: {{user.name}} {{user.lastName}}</h4>
+              <p>Email: {{user.email}}</p>
+              <p>User Id: {{user.id}}</p>
+              <p>User Role: USER</p>
+
+              <div class="col-xs-12" align="center">
+                <button class="btn btn-raised btn-success" ng-click="feature(user.id)">Feature</button>
+              </div>
+            </div>            
+          </div>          
+        </div>
+    </div>
+
+</div>

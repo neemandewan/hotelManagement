@@ -1,0 +1,69 @@
+<div id="addHotel" class="col-xs-12 mob-s" init-nav ng-cloak>
+    
+    <div class="col-xs-12 col-md-offset-1 col-md-10" material >
+     <h3>Add Hotels</h3>   
+
+    <div class="panel panel-default" style="margin-top: 30px;">
+        <div class="panel-body">
+          <div class="col-xs-12 col-md-offset-2 col-md-8">
+
+            <form ng-submit="adHotel(addhotel)" validate>
+                <input type="text"  class="fix-t" placeholder="Name of Hotel" ng-model="addhotel.name" required />  
+                <input type="text" class="fix-t" placeholder="Address" ng-model="addhotel.address" required />            
+                <input type="text" class="fix-t" placeholder="description"  ng-model="addhotel.description" required />
+
+                <div>
+                 <div class="form-group">
+                      <label class="col-xs-3 control-label">Category</label>
+                      <div class="col-xs-5 selectContainer">
+                          <select class="form-control" name="Category" ng-model="addhotel.category" required>
+                              <option value="">Choose Category</option>
+                              <option value="1">Luxury</option>
+                              <option value="2">Resort</option>
+                              <option value="3">Aapartment</option>
+                              <option value="4">Motel</option>
+                              <option value="5">Bed and Preakfast</option>
+                          </select>
+                      </div>
+                 </div>
+                 <br/>
+
+                 <div class="form-group">
+                      <label class="col-xs-3 control-label">Rating</label>
+                      <div class="col-xs-5 selectContainer">
+                          <select class="form-control" name="Rating" ng-model="addhotel.rating" required>
+                              <option value="">Choose Rating</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                          </select>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-10">
+                 <button class="btn btn-raised btn-info">Add</button>
+               </div>
+
+            </form>
+
+          </div>
+
+        </div>
+    </div>
+
+    <!-- <h3>Add Image</h3>
+    <div class="panel panel-default" style="margin-top: 30px;">
+      <div class="panel-body">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
+        
+            <input type="text" name="addImageLink" ng-model="addh.image" placeholder=" image Link" >
+            <button class="btn btn-raised btn-info" ng-click="addIm(addh)">Submit</button>
+   
+           
+          </div>
+      </div>
+    </div> -->
+
+</div>

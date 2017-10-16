@@ -1,0 +1,31 @@
+<div id="" class="col-xs-12 mob-s" init-nav ng-cloak>
+    
+    <div class="col-xs-12 col-md-offset-1 col-md-10" material >
+    <h3>Features used</h3>
+
+    <div class="panel panel-default" style="margin-top: 30px; min-height: 0 !important" ng-click="addfeature()">
+          <div class="panel-body">
+            <div class="col-xs-12 fluid">
+              <h4 class="point"><center>ADD FEATURE</center></h4>
+          </div>
+      </div>
+    </div>
+    
+    <div class="panel panel-default" ng-repeat = "feature in features track by $index" style="margin-top: 30px;">
+        <div class="panel-body">
+          <div class="col-xs-12 fluid">
+              <div class="col-sm-2">
+                {{$index +1}}
+              </div>
+              <div class="col-sm-5">
+                <p>Feature Name: {{feature.featureName}}</p>
+              </div>
+              <div class="col-sm-5">
+                <p>Feature Price: ${{feature.featurePrice}}</p>
+              </div>
+              
+              
+          </div>          
+        </div>
+    </div>
+</div>

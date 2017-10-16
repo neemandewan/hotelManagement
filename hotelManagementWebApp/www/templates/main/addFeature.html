@@ -1,0 +1,41 @@
+<div id="addHotel" class="col-xs-12 mob-s" init-nav ng-cloak>
+    
+    <div class="col-xs-12 col-md-offset-1 col-md-10" material >
+     <h3>Add Feature</h3>   
+
+      <div class="panel panel-default" style="margin-top: 30px;">
+          <div class="panel-body">
+            <div class="col-xs-12 col-md-offset-2 col-md-8">
+
+              <form ng-submit="featureAdd(adR)" validate>
+
+                <div class="col-xs-12">
+                  <div class="col-xs-6">
+                    <p style="margin:30px;">Select feature:</p>
+                  </div>
+                  <div class="col-xs-6 selectContainer">
+                      <select class="form-control" name="Rating" ng-model="adR.featureType" required>
+                          <option value="">Choose Feature types</option>
+                          <option value="Gym">Gym</option>
+                          <option value="Spa">Spa</option>
+                          <option value="Swim">Swimming</option>
+                          <option value="Food">Food</option>
+                      </select>
+                  </div>
+                </div>
+
+                  
+                <input type="number" class="fix-t" placeholder="Rate" name="rate" ng-model="adR.rate" required>
+             
+                <div class="col-xs-12 col-md-10">
+                 <button class="btn btn-raised btn-info">Add</button>
+              </form>  
+                
+             </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+
+</div>

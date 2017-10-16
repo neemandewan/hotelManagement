@@ -1,0 +1,33 @@
+<div id="welcome" class="col-xs-12 mob-s" init-nav ng-cloak>
+    
+    <div class="col-xs-12 col-md-offset-1 col-md-10" material >
+    <h3>List of Hotels</h3>
+
+    <div class="panel panel-default" ng-repeat = "hotel in  hotels track by $index" style="margin-top: 30px;">
+        <div class="panel-body">
+          <div class="col-xs-12 fluid">
+            <div class="col-xs-3 fluid">
+              <div style="background-image: url({{hotel.images}}); " class="hotel-im">
+              </div>
+            </div>
+            <div class="col-xs-7">
+              <h3><b>{{hotel.name}}</b></h3>
+              <h4>{{hotel.address}}</h4>
+              <p>Rating: {{hotel.rating}}</p>
+              <p>Category: {{hotel.category.name}}</p>
+              <p>{{hotel.description}}</p>
+
+            </div>
+            <div class="col-xs-2">
+              <button class="btn btn-raised btn-warning btn-2" ng-click="editHotels(adminId, hotel)">EDIT</button>
+
+              <button class="btn btn-raised btn-info btn-2" ng-click="deleteHotel(adminId, hotel)">DELETE</button>
+
+              <button class="btn btn-raised btn-success btn-2" ng-click="getHotelRooms(adminId, hotel)">ROOMS</button>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+
+</div>

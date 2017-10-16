@@ -1,0 +1,43 @@
+<div id="addHotel" class="col-xs-12 mob-s" init-nav ng-cloak>
+    
+    <div class="col-xs-12 col-md-offset-1 col-md-10" material >
+     <h3>Add Rooms</h3>   
+
+      <div class="panel panel-default" style="margin-top: 30px;">
+          <div class="panel-body">
+            <div class="col-xs-12 col-md-offset-2 col-md-8">
+
+              <form ng-submit="addRoomInHotel(adR)" validate>
+                <input type="text" class="fix-t" placeholder="Floor" name ="floor" ng-model="adR.floor" required />            
+                <input type="text" class="fix-t" placeholder="Room Number"  name =" roomnumber" ng-model="adR.roomNumber" required />
+
+                <div class="col-xs-12">
+                  <div class="col-xs-6">
+                    <p style="margin:30px;">Select room type:</p>
+                  </div>
+                  <div class="col-xs-6 selectContainer">
+                      <select class="form-control" name="Rating" ng-model="adR.roomtype" required>
+                          <option value="">Choose Room types</option>
+                          <option value="1">Single</option>
+                          <option value="2">Double</option>
+                          <option value="3">Studio</option>
+                          <option value="4">Presendental Suite</option>
+                      </select>
+                  </div>
+                </div>
+
+                  
+                <input type="number" class="fix-t" placeholder="Rate" name="rate" ng-model="adR.rate" required>
+             
+                <div class="col-xs-12 col-md-10">
+                 <button class="btn btn-raised btn-info">Add</button>
+              </form>  
+                
+             </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+
+</div>

@@ -1,0 +1,70 @@
+<div class="header">
+    <div class="l-logo container text-center">
+        <div class="logo">
+            <img src="images/logo.png" class="img-responsive">
+        </div>
+        <h1>Hotel Management</h1>
+        <h2>A companion that you can trust</h2>
+        <div class="dmo" ng-show ="noLogin">
+          <button class="btn btn-primary" ng-click="login()">Login</button>
+          <button class="btn btn-primary" ng-click="register()">Register</button>
+        </div>
+
+        <div class="dmo1" ng-hide ="noLogin">
+          <p><span class= "point" ng-click="homeses()">HOME</span>  |  <span class= "point" ng-click="myProfile()">PROFILE</span>  |  <span class= "point" ng-click="myBookings()">BOOKINGS</span>  |  {{user.name| uppercase}} {{user.lastName| uppercase}}</p>
+          
+          <button class="btn btn-primary" ng-click="logout()">Logout</button>
+        </div>
+    </div>
+</div>
+
+  
+    <div class="col-xs-12 col-md-offset-2 col-md-8" material >
+         <div class=" col-xs-12 col-md-offset-2 col-md-8">
+            <h3>My Booking</h3>
+        </div>
+
+        <div class="panel panel-default col-xs-12 col-md-offset-2 col-md-8" ng-repeat="booking in bookings" style="margin-top: 30px;">
+            <div class="panel-body">
+              <div class="col-xs-12 fluid">
+                <div class="col-xs-12">
+                    <div class="" style="margin-top: 5px;">
+                        <div class="panel-body" style="margin-bottom: 5px">
+                            <div>
+                                <p>
+                                <b>RESERVATION:</b></p>
+                                <p style="margin-bottom: 0px;">Begin date: {{booking.begin_date.month}} {{booking.begin_date.dayOfMonth}}  {{booking.begin_date.year}}</p>
+                                <p>End date: {{booking.end_date.month}} {{booking.end_date.dayOfMonth}}  {{booking.end_date.year}}</p>
+                                <hr/>
+                            </div>
+                            
+
+                            <b>Hotel</b>
+                            <p style="margin-bottom: 0px;">Hotel Name: {{booking.hotel.name}}</p>
+                            <p style="margin-bottom: 0px;">Address: {{booking.hotel.address}}</p>
+                            <p style="margin-bottom: 0px;">Rating: {{booking.hotel.rating}}  </p>                        
+                            <p style="margin-bottom: 0px;">Category: {{booking.hotel.category.name}}</p>
+                            <p style="margin-bottom: 0px;">Room Type: {{booking.roomType}}</p>
+                            <hr/>
+                            <b>ROOM:</b>
+                            <p style="margin-bottom: 0px;">                            
+                                <div ng-repeat="room in booking.rooms">
+                                  <p style="margin-bottom: 0px;">Floor: {{room.floor}} </p>
+                                  <p style="margin-bottom: 0px;"> Price: ${{room.price}}</p>
+                                  <p style="margin-bottom: 0px;">Room Number: {{room.room_number}}</p>
+                                </div>
+                            </p>
+
+                            <button ng-hide="booking.status" ng-click="payBooking(booking)" class="btn btn-primary btn-raised">PAY</button>
+                            
+                        </div>
+              
+                    </div>
+                </div>
+                </div>            
+               </div>          
+            </div>
+        </div>
+
+    </div>
+

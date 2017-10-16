@@ -1,0 +1,51 @@
+<!-- Main default -->
+<div material ng-cloak>
+  <div id="viewBubble" class="col-xs-12 b-position" ng-show="viewBubble">
+    <div class="bubble">
+      <div class="col-xs-12">
+        <img id ="n-cust-sm" ng-src="/images/avatar.jpg" class="img-responsive img-rounded logger-img" alt="Customer Image">
+      </div>
+      <div class="col-xs-12">
+        <p class="logger-name">{{admin.name}} {{admin.lastName}}</p>
+        <p class="logger-name">{{admin.email}}</p>
+      </div>
+      <div class="col-xs-12 fluid">
+        <button class="btn btn-raised btn-primary w-100" type="submit" ng-click="logout()">
+          <!-- <i class="material-icons logger-exit">exit_to_app</i> &ensp; LOG OUT -->
+          <i class="glyphicon glyphicon-off logger-exit"></i> &ensp; LOG OUT
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+      <ul id="gn-menu" class="gn-menu-main">
+          <li class="gn-trigger">
+              <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+              <nav class="gn-menu-wrapper">
+                  <div class="gn-scroller">
+                      <ul class="gn-menu" ng-hide="noLogin">
+                          <li><a class="btn btn-flat gn-icon glyphicon glyphicon-th-large n-icon" ng-click="setTemplate('0')">HOME</a></li>
+                          <li><a id="updateInfo" class="btn btn-flat gn-icon glyphicon glyphicon-plus-sign n-icon" ng-click="setTemplate('1')">ADD HOTEL</a></li>
+                          <li><a id="changeunp" class="btn btn-flat gn-icon glyphicon glyphicon-edit n-icon" ng-click="setTemplate('2')">EDIT HOTEL</a></li>
+                          <li><a id="changeunp" class="btn btn-flat gn-icon glyphicon glyphicon-info-sign n-icon" ng-click="setTemplate('3')">CUSTOMERS' INFO</a></li>
+                          <li><a class="btn btn-flat gn-icon gn-icon-exit n-icon" ng-click="logout()">EXIT</a></li>
+                      </ul>
+                  </div>
+              </nav>
+          </li>
+          <div class="pull-left">
+
+            <h3>HOTEL MANAGEMENT</h3>  
+          </div>
+          <div class="pull-right n-header-right">
+            <img ng-src="/images/avatar.jpg" class="n-cust-sm img-responsive img-circle btn-raised" alt="Customer Image" ng-click="showBubble()">
+            <span class="mar-r-15 mar-l-15">{{email}}</span>
+          </div>
+      </ul>
+      <br class="break-nav" />
+      <div class="t-content" ng-include = "template.content">
+      </div>
+      <div style="clear:both;"></div>
+  </div>
+</div>
