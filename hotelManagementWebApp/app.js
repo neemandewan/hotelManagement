@@ -51,7 +51,7 @@ app.use(cookieParser());
 // session for Express
 // session for Express
 app.use(session({    
-    secret: 'iSuchana webApp secret goes here',
+    secret: 'hotelManagement webApp secret goes here',
     resave: true,
     saveUninitialized: true,
     cookie: { secure: false, maxAge: 1000*60*60} // in sec

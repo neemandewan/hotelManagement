@@ -1,6 +1,6 @@
 {
-  "name": "isuchana",
-  "description": "iSuchana web app for giving notifications, results, routines and calenders to schools, colleges and institutions.",
+  "name": "hotelManagement",
+  "description": "Hotel Management web app for MPP project",
   "main": "app.js",
   "authors": [
     "neeman.drn@gmail.com"

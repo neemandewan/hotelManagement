@@ -1,6 +1,6 @@
-# iSuchana Web App #
+# hotelManagement Web App #
 
-iSuchana Web app is a web application showing notices, results, routines and events of a particular school, college or institution.
+Web app for Hotel Management MPP project
 
 ### Steps to run this app:- ###
 
