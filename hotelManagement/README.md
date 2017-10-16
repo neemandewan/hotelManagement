@@ -1,10 +1,9 @@
-# SpringSecurityLoginTutorial
+# Hotel Management Web service
 
-1. mvn clean
-2. mvn clean install
-3. Go to the target folder
-4. java -jar demo-0.0.1-SNAPSHOT.ja
+MPP project
+1. configure settings on application.properties 
+2. Maven build project
+3. Run project
 
-- http://localhost:8080/registration
-- http://localhost:8080/login
-
+To view:
+- http://localhost:8080/swagger-ui.html
