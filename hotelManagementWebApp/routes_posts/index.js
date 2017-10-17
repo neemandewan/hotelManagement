@@ -113,7 +113,7 @@ exports.bookRooms = function(req, res) {
 
     if(!data) return false;
 
-    httpHelper.makeRequest('/api/bookings/'+data.hotelId+'/newBook/' + data.userId, 'POST', 'application/json',
+    httpHelper.makeRequest('/api/bookings/'+data.hotelId+'/' + data.userId, 'POST', 'application/json',
         JSON.stringify({  
             "beginDate": data.beginDate,
             "endDate": data.closeDate,
@@ -161,32 +161,6 @@ exports.allbookings = function(req, res) {
       });
 };
 
-exports.pay = function(req, res) {
-    var data = req.body;
-    console.log(data);
-
-    if(!data) return false;
-
-    httpHelper.makeRequest('/api/bookings/'+data.payId, 'PUT', 'application/json',
-        JSON.stringify({ 
-        }), function (responseGetString) {
-
-            var responseJSON = JSON.parse(responseGetString);
-
-            console.log("responseJSON ----->>>>> ");
-            console.log(responseJSON);
-
-            if(responseJSON.status == 200 || responseJSON.status == "200") {
-
-                res.status(200).send(responseJSON.data);
-
-            }else {
-                res.status(404).send("ERROR");
-            }
-      });
-};
-
-
 exports.loginAdmin = function(req, res) {
     var data = req.body;
     console.log(data.pass);
@@ -224,7 +198,7 @@ exports.editHotel = function(req, res) {
 
     if(!data) return false;
 
-    httpHelper.makeRequest('/api/hotels/'+data.adminId+'/update/'+data.hotelId, 'PUT', 'application/json',
+    httpHelper.makeRequest('/api/hotels/'+data.adminId+'/'+data.hotelId, 'PUT', 'application/json',
         JSON.stringify({           
             "name": data.name,
             "address": data.address,
@@ -258,7 +232,7 @@ exports.addHotel = function(req, res) {
 
     if(!data) return false;
 
-    httpHelper.makeRequest('/api/hotels/'+data.adminId+'/new', 'POST', 'application/json',
+    httpHelper.makeRequest('/api/hotels/'+data.adminId, 'POST', 'application/json',
         JSON.stringify({           
             "name": data.name,
             "address": data.address,
@@ -292,7 +266,7 @@ exports.delHotel = function(req, res) {
 
     if(!data) return false;
 
-    httpHelper.makeRequest('/api/hotels/'+data.adminId+'/delete/'+ data.hotelId, 'DELETE', 'application/json',
+    httpHelper.makeRequest('/api/hotels/'+data.adminId+'/'+ data.hotelId, 'DELETE', 'application/json',
         JSON.stringify({           
             
         }), function (responseGetString) {
@@ -344,7 +318,7 @@ exports.getRoom = function(req, res) {
 
     if(!data) return false;
 
-    httpHelper.makeRequest('/api/rooms/'+data.hotelId+'/all', 'GET', 'application/json',
+    httpHelper.makeRequest('/api/rooms/'+data.hotelId, 'GET', 'application/json',
         JSON.stringify({
 
         }), function (responseGetString) {
@@ -370,7 +344,7 @@ exports.addRoom = function(req, res) {
 
     if(!data) return false;
 
-    httpHelper.makeRequest('/api/rooms/'+data.hotelId+'/new', 'POST', 'application/json',
+    httpHelper.makeRequest('/api/rooms/'+data.hotelId, 'POST', 'application/json',
         JSON.stringify({           
             "floor": data.floor,
             "room_number": data.room_number,
@@ -401,7 +375,7 @@ exports.editRoom = function(req, res) {
 
     if(!data) return false;
 
-    httpHelper.makeRequest('/api/rooms/'+data.hotelId+'/update/'+data.roomId, 'PUT', 'application/json',
+    httpHelper.makeRequest('/api/rooms/'+data.hotelId+'/'+data.roomId, 'PUT', 'application/json',
         JSON.stringify({           
             "floor": data.floor,
             "room_number": data.room_number,
@@ -432,7 +406,7 @@ exports.delRoom = function(req, res) {
 
     if(!data) return false;
 
-    httpHelper.makeRequest('/api/rooms/'+data.hotelId+'/delete/'+ data.roomId, 'DELETE', 'application/json',
+    httpHelper.makeRequest('/api/rooms/'+data.hotelId+'/'+ data.roomId, 'DELETE', 'application/json',
         JSON.stringify({
             
         }), function (responseGetString) {

@@ -28,7 +28,7 @@ WS_PORT = '8080';
 login = '/api/login';
 hotelAdd = '/api/hotel/add';
 
-hotels = '/api/hotels/all'
+hotels = '/api/hotels/'
 login = '/api/login'
 users = '/api/users/'
 register = '/api/registration'

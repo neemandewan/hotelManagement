@@ -124,7 +124,6 @@ app.post('/api/registerUser', routes_posts.registerUser);
 app.post('/api/roomType', routes_posts.roomType);
 app.post('/api/bookRooms', routes_posts.bookRooms);
 app.post('/api/allbookings', routes_posts.allbookings);
-app.post('/api/pay', routes_posts.pay);
 
 app.post('/api/loginAdmin', routes_posts.loginAdmin);
 

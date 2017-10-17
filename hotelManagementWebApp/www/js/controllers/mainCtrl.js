@@ -506,6 +506,14 @@ function mainCtrl($scope, $anchorScroll, $rootScope, $location, $interval, $wind
         authenticationService.addFeature(req).then(function(res) {
 
             $scope.features = res.data;
+            alert("Feature added successfully");
+
+            $scope.feature($scope.userId);
+
+            /*$scope.fet = {
+                featureType: "",
+                rate: ""
+            }*/
 
         },function(err) {
             alert("Error");
