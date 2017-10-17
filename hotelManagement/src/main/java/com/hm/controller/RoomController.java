@@ -29,12 +29,6 @@ public class RoomController {
     private HotelService hotelService;
 
     @Autowired
-    private ImageService imageService;
-
-    @Autowired
-    private UserService userService;
-
-    @Autowired
     private RoomService roomService;
 
     @Autowired
@@ -44,7 +38,7 @@ public class RoomController {
         this.modelMapper = modelMapper;
     }
 
-    @RequestMapping(value="/{hotelId}/all", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/{hotelId}", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Response<List<Room>> getHotels(@PathVariable("hotelId") Long hotelId) {
         //User user = userService.findUserById(hotelId);
@@ -52,7 +46,7 @@ public class RoomController {
         return Response.ok(roomsList, HttpStatus.OK.value(), HttpStatus.OK.name());
     }
 
-    @RequestMapping(value="/{hotelId}/new", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/{hotelId}", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Response<Room> addRoom(@PathVariable("hotelId") Long hotelId, @Valid @RequestBody RoomInputDTO roomInputDTO) {
         System.out.println(roomInputDTO);
@@ -82,7 +76,7 @@ public class RoomController {
         }
     }
 
-    @RequestMapping(value="/{hotelId}/update/{roomId}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/{hotelId}/{roomId}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Response<Hotel> updateHotel(@PathVariable("hotelId") Long hotelId, @PathVariable("roomId") Long roomId, @Valid @RequestBody RoomInputDTO roomInputDTO) {
         System.out.println(roomInputDTO);
@@ -109,7 +103,7 @@ public class RoomController {
         }
     }
 
-    @RequestMapping(value="/{hotelId}/delete/{roomId}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/{hotelId}/{roomId}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Response<Hotel> delHotel(@PathVariable("hotelId") Long hotelId, @PathVariable("roomId") Long roomId) {
 

@@ -53,14 +53,6 @@ public class BookingController {
         return Response.ok(roomTypeList, HttpStatus.OK.value(), HttpStatus.OK.name());
     }
 
-    @RequestMapping(value="/{hotelId}/all", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody
-    Response<List<Room>> getHotels(@PathVariable("hotelId") Long hotelId) {
-        //User user = userService.findUserById(hotelId);
-        List<Room> roomsList = roomService.getRooms(hotelId);
-        return Response.ok(roomsList, HttpStatus.OK.value(), HttpStatus.OK.name());
-    }
-
     @RequestMapping(value="/{userId}", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Response<List<Booking>> getBooking(@PathVariable("userId") Long userId) {
@@ -68,7 +60,7 @@ public class BookingController {
         return Response.ok(booking, HttpStatus.OK.value(), HttpStatus.OK.name());
     }
 
-    @RequestMapping(value="/{hotelId}/newBook/{userId}", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/{hotelId}/{userId}", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Response<Booking> addBooking(@PathVariable("hotelId") Long hotelId, @PathVariable("userId") Long userId, @Valid @RequestBody BookingInputDTO bookingInputDTO) {
         System.out.println(bookingInputDTO);
@@ -143,15 +135,15 @@ public class BookingController {
         //return null;
     }
 
-    @RequestMapping(value="/{bookId}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/{hotelId}/{bookId}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
-    Response<Booking> payBook(@PathVariable("bookId") Long bookId) {
+    Response<Booking> updateBook(@PathVariable("bookId") Long bookId) {
 
         Booking res = bookingService.updateById(bookId);
         return Response.ok(res, HttpStatus.OK.value(), HttpStatus.OK.name());
     }
 
-    @RequestMapping(value="/{hotelId}/delete/{bookId}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/{hotelId}/{bookId}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Response<Hotel> delHotel(@PathVariable("hotelId") Long hotelId, @PathVariable("roomId") Long roomId) {
 

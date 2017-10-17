@@ -36,6 +36,12 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void saveUser(User user) {
         user.setActive(1);
+        log.info(user.getPassword());
+        String pass = bCryptPasswordEncoder.encode(user.getPassword());
+        user.setPassword(pass);
+
+        log.info(user.toString());
+
         Role userRole = roleRepository.findByRole("USER");
         user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
 		userRepository.save(user);
@@ -69,8 +75,8 @@ public class UserServiceImpl implements UserService{
 		//String pass = bCryptPasswordEncoder.encode(login.getPassword());
 		User user = userRepository.findByEmail(login.getEmail());
 		if(user == null) return null;
-		System.out.println(user);
-		if(user.getPassword().equals(login.getPassword())) {
+		log.info(login.getPassword());
+		if(bCryptPasswordEncoder.matches(login.getPassword(), user.getPassword())) {
 			return user;
 		}
 
